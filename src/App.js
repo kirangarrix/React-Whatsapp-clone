@@ -1,12 +1,12 @@
-import './App.css';
-import Messanger from './components/Messanger';
-import {WhatsappMessanger} from './components/Messanger';
+import "./App.css";
+import Messanger from "./components/Messanger";
+import AccountProvider from "./context/AccountProvider";
+
 function App() {
   return (
-    <div className="App">
- <Messanger />
- <WhatsappMessanger/>
-    </div>
+    <AccountProvider>
+      <Messanger />
+    </AccountProvider>
   );
 }
 

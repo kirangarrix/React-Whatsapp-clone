@@ -1,7 +1,11 @@
-import React from 'react'
+import { useContext } from 'react';
 import { AppBar,Toolbar,makeStyles,Box } from '@material-ui/core';
+import { AccountContext } from '../context/AccountProvider';
+
+
 // Components
 import Login from './account/Login';
+import CheckBox from './CheckBox';
 
 
 const useStyle=makeStyles({
@@ -19,22 +23,18 @@ const useStyle=makeStyles({
 
 const Messanger = () => {
     const classes=useStyle();
+    const {account}=useContext(AccountContext);
+
     return (
         <Box className={classes.component}>
         <AppBar className={classes.loginHeader}>
           <Toolbar></Toolbar>
         </AppBar>
-        <Login />
+       { account? <CheckBox/> : <Login />}
         </Box>
     )
 }
 
-export const WhatsappMessanger = () => {
-    return (
-        <div>
-            Hello from Whatsapp
-        </div>
-    )
-}
+
 
 export default Messanger
