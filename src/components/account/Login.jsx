@@ -10,6 +10,8 @@ import {
 } from "@material-ui/core";
 import { GoogleLogin } from "react-google-login";
 import { AccountContext } from "../../context/AccountProvider";
+import {clientId} from '../constants/data'
+
 
 const useStyle = makeStyles({
   component: {
@@ -58,8 +60,6 @@ const style = {
 const Login = ({ classes }) => {
   const classname = useStyle();
   const qrurl = "https://www.ginifab.com/feeds/qr_code/img/qrcode.jpg";
-  const clientId =
-    "295753201340-qknrrbgpm8guok33qo9vpcvl8rdshb6d.apps.googleusercontent.com";
   const { account, setAccount } = useContext(AccountContext);
   const onLoginSuccess = (res) => {
     console.log("Login success", res.profileObj);
